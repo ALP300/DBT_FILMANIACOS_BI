@@ -19,32 +19,3 @@ countries as (
     select * from {{ source('dvdrental', 'country') }}
 ),
 
-final as (
-    select
-        c.customer_id,
-        c.first_name,
-        c.last_name,
-        c.email,
-        c.active,
-        c.create_date,
-        c.store_id,
-        
-        -- Address details
-        a.address,
-        a.address2,
-        a.district,
-        a.postal_code,
-        a.phone,
-        
-        -- City and country
-        ci.city,
-        co.country,
-        
-        c.last_update
-    from customers c
-    left join addresses a on c.address_id = a.address_id
-    left join cities ci on a.city_id = ci.city_id
-    left join countries co on ci.country_id = co.country_id
-)
-
-select * from final
