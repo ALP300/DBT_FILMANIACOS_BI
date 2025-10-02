@@ -1,0 +1,45 @@
+15:28:32  Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000161F05F6660>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000161EDFDCD10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000161F0C44470>]}
+15:28:32  Running with dbt=1.10.13
+15:28:32  running dbt with arguments {'partial_parse': 'True', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True', 'use_colors': 'True', 'cache_selected_only': 'False', 'target_path': 'None', 'version_check': 'True', 'invocation_command': 'dbt run --select staging.* --debug', 'log_format': 'default', 'warn_error': 'None', 'introspect': 'True', 'debug': 'True', 'log_cache_events': 'False', 'fail_fast': 'False', 'no_print': 'None', 'empty': 'False', 'printer_width': '80', 'use_experimental_parser': 'False', 'quiet': 'False', 'log_path': 'D:\\DBT_FILMANIACOS_BI\\logs', 'indirect_selection': 'eager', 'profiles_dir': 'C:\\Users\\aitor\\.dbt', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'write_json': 'True'}
+15:28:33  Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '66fff969-980e-4715-a663-77a44327a1af', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000161EE0E9F10>]}
+15:28:33  Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '66fff969-980e-4715-a663-77a44327a1af', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000161F119F9E0>]}
+15:28:33  Registered adapter: postgres=1.9.1
+15:28:33  checksum: 9f0c81e2574b4ff463f3d16d080df83c6982fc0372c9feeacae0504ac9ea3ffe, vars: {}, profile: , target: , version: 1.10.13
+15:28:33  Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+15:28:33  Partial parsing enabled, no changes found, skipping parsing
+15:28:33  Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '66fff969-980e-4715-a663-77a44327a1af', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000161F2814380>]}
+15:28:33  Wrote artifact WritableManifest to D:\DBT_FILMANIACOS_BI\target\manifest.json
+15:28:33  Wrote artifact SemanticManifest to D:\DBT_FILMANIACOS_BI\target\semantic_manifest.json
+15:28:33  Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '66fff969-980e-4715-a663-77a44327a1af', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000161F2BEF320>]}
+15:28:33  Found 19 models, 17 data tests, 12 sources, 447 macros
+15:28:33  Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '66fff969-980e-4715-a663-77a44327a1af', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000161F13AB1A0>]}
+15:28:33  
+15:28:33  Concurrency: 1 threads (target='dev')
+15:28:33  
+15:28:33  Acquiring new postgres connection 'master'
+15:28:33  Acquiring new postgres connection 'list_db_filmaniacos'
+15:28:33  Using postgres connection "list_db_filmaniacos"
+15:28:33  On list_db_filmaniacos: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "dbt_filmaniacos", "target_name": "dev", "connection_name": "list_db_filmaniacos"} */
+
+    select distinct nspname from pg_namespace
+  
+15:28:33  Opening a new connection, currently in state init
+15:28:33  Postgres adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "dbt_filmaniacos", "target_name": "dev", "connection_name": "list_db_filmaniacos"} */
+
+    select distinct nspname from pg_namespace
+  
+15:28:33  Postgres adapter: Rolling back transaction.
+15:28:33  Postgres adapter: Error running SQL: macro list_schemas
+15:28:33  Postgres adapter: Rolling back transaction.
+15:28:33  On list_db_filmaniacos: No close available on handle
+15:28:33  Connection 'master' was properly closed.
+15:28:33  Connection 'list_db_filmaniacos' was properly closed.
+15:28:33  
+15:28:33  Finished running  in 0 hours 0 minutes and 0.11 seconds (0.11s).
+15:28:33  Encountered an error:
+Database Error
+  'utf-8' codec can't decode byte 0xf3 in position 85: invalid continuation byte
+15:28:33  Command `dbt run` failed at 10:28:33.906268 after 1.02 seconds
+15:28:33  Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000161F0CAB1A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000161F27E1FA0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000161F27E2B40>]}
+15:28:33  Flushing usage events
+15:28:34  An error was encountered while trying to flush usage events
